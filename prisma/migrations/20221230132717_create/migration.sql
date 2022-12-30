@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "Account" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "ownerId" TEXT NOT NULL,
+    "balance" INTEGER NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "Account_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
