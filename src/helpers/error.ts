@@ -13,7 +13,7 @@ interface FieldErrorType extends Error {
   field: string;
 }
 
-export function parseErrorFromCatch(
+export function parseFieldErrorFromCatch(
   error: any | unknown
 ): FieldErrorObjectType[] {
   const { field, message } = error as FieldErrorType;

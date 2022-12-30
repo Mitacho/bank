@@ -3,7 +3,7 @@ import { Balance } from "@application/entities/account/balance";
 import { AccountsRepository } from "@application/repositories/accounts-repository";
 import { UsersRepository } from "@application/repositories/users-repository";
 import { Email, User } from "@entities/user";
-import { parseErrorFromCatch } from "@helpers/error";
+import { parseFieldErrorFromCatch } from "@helpers/error";
 import {
   SignUpUserUseCaseRequest,
   SignUpUserUseCaseResponse,
@@ -48,7 +48,7 @@ export class SignUpUserUseCase {
     } catch (error) {
       return {
         success: false,
-        errors: parseErrorFromCatch(error),
+        errors: parseFieldErrorFromCatch(error),
       };
     }
 
@@ -77,7 +77,7 @@ export class SignUpUserUseCase {
     } catch (error) {
       return {
         success: false,
-        errors: parseErrorFromCatch(error),
+        errors: parseFieldErrorFromCatch(error),
       };
     }
 
@@ -86,7 +86,7 @@ export class SignUpUserUseCase {
     } catch (error) {
       return {
         success: false,
-        errors: parseErrorFromCatch(error),
+        errors: parseFieldErrorFromCatch(error),
       };
     }
 
