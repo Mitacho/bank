@@ -10,7 +10,7 @@ export class PrismaAccountsRepository implements AccountsRepository {
   select: Prisma.AccountSelect | null;
 
   constructor(private info?: GraphQLResolveInfo) {
-    this.select = info
+    this.select = this.info
       ? parseSelectedFields(this.info as any)?.accounts?.select
       : null;
   }
